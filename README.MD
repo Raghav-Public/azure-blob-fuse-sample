@@ -8,9 +8,11 @@
 4.	Mount the volume into the container 
     `docker run -it -v "$(pwd)":/mycontainer1 az-blob-fuse-reader-writer /bin/ash`
 5.	Read and write files from and to this folder (internally to azure storage)
+6. Azure blob fuse can be used in AKS (https://github.com/Azure/kubernetes-volume-drivers/blob/master/flexvolume/blobfuse/README.md)
 
-Some considerations
+## Some considerations
 1.	Blobfuse stores all open file contents in the temporary path. Make sure to have enough space to accommodate all open files
 2.	-o allow_other to give access to other accounts
 
-Please let me know if you have any questions or would like to see a demo.
+## Demo
+The demo creates some text files and stores them in your storage account
